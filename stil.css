@@ -2,44 +2,45 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    display: grid;
     margin: 0;
     background-color: rgb(208, 226, 231);
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .header {
     margin: 10px;
     gap: 20px;
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    max-width: 500px;
 }
 
 .header h1 {
     margin-bottom: 10%;
-    
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .container {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 700px;
-    /* Quitamos flex del container, ahora será un contenedor scrollable */
+    max-height: 80vh;
     overflow-y: auto;
-    /* Scroll vertical */
     overflow-x: hidden;
-    /* oculta barra horizontal */
-
     border: 9px solid transparent;
-    /* el border no acepta gradient directo */
     border-radius: 2%;
     background-color: white;
-    font-size: 30px;
+    font-size: clamp(1.2rem, 3vw, 1.875rem);
     font-family: 'Lucida Sans', 'Lucida Sans Regular',
         'Lucida Grande', 'Lucida Sans Unicode',
         Geneva, Verdana, sans-serif;
     box-shadow: 0 10px 24px rgba(54, 52, 52, 0.2);
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .header .botones {
@@ -50,10 +51,12 @@ body {
 }
 
 button {
-    width: 300px;
-    height: 100px;
-    font-size: 2rem;
-    padding: 20px 40px;
+    width: 100%;
+    max-width: 300px;
+    min-width: 200px;
+    height: clamp(70px, 12vw, 100px);
+    font-size: clamp(1rem, 3vw, 2rem);
+    padding: clamp(10px, 3vw, 20px) clamp(20px, 5vw, 40px);
     border-radius: 20px;
     border: none;
     background: linear-gradient(90deg, #4f8cff, #38e6b0);
@@ -67,4 +70,78 @@ button {
 button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries para dispositivos específicos */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        max-height: 75vh;
+        border-width: 6px;
+        padding: 15px;
+    }
+    
+    .header h1 {
+        margin-bottom: 5%;
+    }
+    
+    button {
+        margin-top: 20px;
+        max-width: 280px;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 2px;
+    }
+    
+    .container {
+        max-height: 70vh;
+        border-width: 4px;
+        padding: 10px;
+        border-radius: 3%;
+    }
+    
+    .header {
+        margin: 5px;
+        gap: 10px;
+    }
+    
+    .header h1 {
+        margin-bottom: 3%;
+    }
+    
+    button {
+        margin-top: 15px;
+        border-radius: 15px;
+        max-width: 250px;
+        min-width: 180px;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+    .container {
+        max-height: 65vh;
+        padding: 8px;
+    }
+    
+    button {
+        min-width: 160px;
+        max-width: 220px;
+    }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-height: 85vh;
+    }
 }
