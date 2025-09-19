@@ -1,0 +1,70 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    margin: 0;
+    background-color: rgb(208, 226, 231);
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    margin: 10px;
+    gap: 20px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.header h1 {
+    margin-bottom: 10%;
+    
+}
+
+.container {
+    width: 500px;
+    height: 700px;
+    /* Quitamos flex del container, ahora será un contenedor scrollable */
+    overflow-y: auto;
+    /* Scroll vertical */
+    overflow-x: hidden;
+    /* oculta barra horizontal */
+
+    border: 9px solid transparent;
+    /* el border no acepta gradient directo */
+    border-radius: 2%;
+    background-color: white;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode',
+        Geneva, Verdana, sans-serif;
+    box-shadow: 0 10px 24px rgba(54, 52, 52, 0.2);
+    padding: 20px;
+}
+
+.header .botones {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    width: 300px;
+    height: 100px;
+    font-size: 2rem;
+    padding: 20px 40px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg, #4f8cff, #38e6b0);
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
