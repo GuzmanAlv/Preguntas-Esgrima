@@ -75,67 +75,123 @@ button:hover {
 /* Media Queries para dispositivos específicos */
 
 /* Tablets */
+/* Media Queries para dispositivos específicos */
+
+/* Tablets */
 @media screen and (max-width: 768px) {
     body {
-        padding: 5px;
+        padding: 8px;
+        font-size: 16px; /* Aumentar tamaño base de fuente */
     }
     
     .container {
-        max-height: 75vh;
+        max-height: 80vh;
         border-width: 6px;
-        padding: 15px;
+        padding: 20px;
     }
     
     .header h1 {
+        font-size: 2rem; /* Aumentar título */
         margin-bottom: 5%;
+    }
+    
+    .header h2 {
+        font-size: 1.3rem; /* Subtítulos más grandes */
+    }
+    
+    .header p {
+        font-size: 1.1rem; /* Párrafos más legibles */
+        line-height: 1.4;
     }
     
     button {
         margin-top: 20px;
-        max-width: 280px;
+        min-width: 200px;
+        max-width: 320px;
+        min-height: 50px; /* Altura mínima para mejor toque */
+        font-size: 1.1rem; /* Texto de botón más grande */
+        padding: 12px 20px;
     }
 }
 
 /* Móviles */
 @media screen and (max-width: 480px) {
     body {
-        padding: 2px;
+        padding: 5px;
+        font-size: 18px; /* Aumentar aún más para móviles */
     }
     
     .container {
-        max-height: 70vh;
+        max-height: 75vh;
         border-width: 4px;
-        padding: 10px;
+        padding: 15px;
         border-radius: 3%;
     }
     
     .header {
-        margin: 5px;
-        gap: 10px;
+        margin: 8px;
+        gap: 15px;
     }
     
     .header h1 {
-        margin-bottom: 3%;
+        font-size: 1.8rem; /* Título proporcionado para móvil */
+        margin-bottom: 4%;
+        line-height: 1.2;
+    }
+    
+    .header h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    
+    .header p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 8px;
     }
     
     button {
-        margin-top: 15px;
+        margin-top: 18px;
         border-radius: 15px;
-        max-width: 250px;
-        min-width: 180px;
+        min-width: 220px;
+        max-width: 280px;
+        min-height: 55px; /* Botones más altos para mejor usabilidad */
+        font-size: 1.2rem;
+        font-weight: 600; /* Texto más bold */
+        padding: 15px 25px;
+        letter-spacing: 0.5px; /* Mejor legibilidad */
     }
 }
 
 /* Pantallas muy pequeñas */
 @media screen and (max-width: 320px) {
+    body {
+        font-size: 16px;
+    }
+    
     .container {
-        max-height: 65vh;
-        padding: 8px;
+        max-height: 70vh;
+        padding: 12px;
+    }
+    
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .header p {
+        font-size: 1.1rem;
     }
     
     button {
-        min-width: 160px;
-        max-width: 220px;
+        min-width: 200px;
+        max-width: 260px;
+        min-height: 50px;
+        font-size: 1.1rem;
+        padding: 12px 20px;
     }
 }
 
@@ -143,5 +199,31 @@ button:hover {
 @media screen and (min-width: 1200px) {
     .container {
         max-height: 85vh;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header h2 {
+        font-size: 1.6rem;
+    }
+    
+    button {
+        min-height: 45px;
+        font-size: 1rem;
+    }
+}
+
+/* Mejoras adicionales para accesibilidad táctil */
+@media (hover: none) and (pointer: coarse) {
+    /* Dispositivos táctiles */
+    button {
+        min-height: 48px; /* Mínimo recomendado por Apple/Google */
+        touch-action: manipulation; /* Evita zoom accidental */
+    }
+    
+    a, button, input[type="button"], input[type="submit"] {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
     }
 }
