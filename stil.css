@@ -164,34 +164,67 @@ button:hover {
 }
 
 /* Pantallas muy pequeñas */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
     body {
-        font-size: 16px;
+        padding: 5px;
     }
-    
+
+    .container {
+        max-height: 75vh;
+        border-width: 6px;
+        padding: 15px;
+    }
+
+    .header h1 {
+        margin-bottom: 5%;
+    }
+
+    button {
+        margin-top: 20px;
+        max-width: 280px;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 2px;
+    }
+
     .container {
         max-height: 70vh;
-        padding: 12px;
+        border-width: 4px;
+        padding: 10px;
+        border-radius: 3%;
     }
-    
+
+    .header {
+        margin: 5px;
+        gap: 10px;
+    }
+
     .header h1 {
-        font-size: 1.6rem;
+        margin-bottom: 3%;
     }
-    
-    .header h2 {
-        font-size: 1.3rem;
-    }
-    
-    .header p {
-        font-size: 1.1rem;
-    }
-    
+
     button {
-        min-width: 200px;
-        max-width: 260px;
-        min-height: 50px;
-        font-size: 1.1rem;
-        padding: 12px 20px;
+        margin-top: 15px;
+        border-radius: 15px;
+        max-width: 250px;
+        min-width: 180px;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+    .container {
+        max-height: 65vh;
+        padding: 8px;
+    }
+
+    button {
+        min-width: 160px;
+        max-width: 220px;
     }
 }
 
@@ -200,21 +233,7 @@ button:hover {
     .container {
         max-height: 85vh;
     }
-    
-    .header h1 {
-        font-size: 2.5rem;
-    }
-    
-    .header h2 {
-        font-size: 1.6rem;
-    }
-    
-    button {
-        min-height: 45px;
-        font-size: 1rem;
-    }
 }
-
 /* Mejoras adicionales para accesibilidad táctil */
 @media (hover: none) and (pointer: coarse) {
     /* Dispositivos táctiles */
